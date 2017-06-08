@@ -1,0 +1,34 @@
+{
+  "name": "aws-lambda-workshop",
+  "version": "1.0.0",
+  "description": "Some examples for AWS lambda workshops",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmammino/aws-lambda-workshop.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "serverless",
+    "workshop",
+    "examples"
+  ],
+  "author": "Luciano Mammino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lmammino/aws-lambda-workshop/issues"
+  },
+  "homepage": "https://github.com/lmammino/aws-lambda-workshop#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

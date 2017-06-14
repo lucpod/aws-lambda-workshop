@@ -4,7 +4,9 @@
   "description": "Some examples for AWS lambda workshops",
   "main": "index.js",
   "scripts": {
-    "test": "eslint src/**/*.js"
+    "test:lint": "eslint src/**/*.js",
+    "test:unit": "jest src/**/test.js --verbose --coverage",
+    "test": "npm run test:lint && npm run test:unit"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^20.0.4"
   }
 }

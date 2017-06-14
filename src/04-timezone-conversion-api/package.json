@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.13"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}

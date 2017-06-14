@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1 is 1 1`] = `
+Object {
+  "body": "{\\"result\\":1}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`6 is Fizz 1`] = `
+Object {
+  "body": "{\\"result\\":\\"Fizz\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`10 is Buzz 1`] = `
+Object {
+  "body": "{\\"result\\":\\"Buzz\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`15 is FizzBuzz 1`] = `
+Object {
+  "body": "{\\"result\\":\\"FizzBuzz\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`It fail if the body of the request is not a number 1`] = `[Error: Invalid body, a number was expected]`;

@@ -33,6 +33,8 @@ Be sure to replace the value of `BUCKET` with your own unique bucket name
 
 ---
 
+# Navigation
+
 | << Prev | Next >> |
 | :---         |          ---: |
 | .   | [02 - Advanced Hello World API](../02-advanced-hello-world-api) |

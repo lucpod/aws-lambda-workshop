@@ -11,4 +11,3 @@ Some examples for AWS lambda workshops
 Check the [`lessons` folder](lessons/) to access the examples.
 
 **Currently WORK IN PROGRESS**
-m

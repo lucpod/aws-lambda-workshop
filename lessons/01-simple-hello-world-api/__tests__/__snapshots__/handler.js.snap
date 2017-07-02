@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should respond with hello world 1`] = `
+Object {
+  "body": "{\\"message\\":\\"Hello World\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;

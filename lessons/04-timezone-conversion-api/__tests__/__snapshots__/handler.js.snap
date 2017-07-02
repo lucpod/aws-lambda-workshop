@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should convert timezone 1`] = `
+Object {
+  "body": "{\\"timestamp\\":\\"2018-05-18T07:13:10+10:00\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;

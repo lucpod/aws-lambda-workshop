@@ -8,6 +8,6 @@ Some examples for AWS lambda workshops
 
 ## Usage
 
-Check the [`src` folder](src/) to access the examples.
+Check the [`lessons` folder](lessons/) to access the examples.
 
 **Currently WORK IN PROGRESS**

@@ -14,6 +14,11 @@ But, if you specify a `name` option in the query string parameter, the `World` p
 {"message":"Hello Podge"}
 ```
 
+## Goal
+
+The goal of this exercise is to learn how to use query string parameters in API Lambdas.
+
+
 ## Test locally
 
 With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/02-advanced-hello-world-api/`), run:

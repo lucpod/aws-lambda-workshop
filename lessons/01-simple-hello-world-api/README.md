@@ -8,6 +8,11 @@ The API will respond to GET requests always returning:
 {"message":"Hello World"}
 ```
 
+## Goal
+
+The goal of this exercise is to learn how to write a very simple Lambda, test it locally and deploy it on AWS.
+
+
 ## Test locally
 
 With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/01-simple-hello-world-api/`), run:

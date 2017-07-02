@@ -4,8 +4,8 @@ test('It fail if the body of the request is not a number', () => {
   handler({
     body: 'aaa'
   }, {}, (err, response) => {
-    expect(err).toMatchSnapshot()
-    expect(response).toBe(undefined)
+    expect(err).toBe(null)
+    expect(response).toMatchSnapshot()
   })
 })
 

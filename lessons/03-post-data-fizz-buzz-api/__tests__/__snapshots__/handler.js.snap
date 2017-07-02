@@ -32,7 +32,7 @@ Object {
 
 exports[`15 is FizzBuzz 1`] = `
 Object {
-  "body": "{\\"result\\":\\"FizzBuzz\\"}",
+  "body": "{\\"result\\":\\"Fizz Buzz\\"}",
   "headers": Object {
     "Content-Type": "application/json",
   },
@@ -40,4 +40,12 @@ Object {
 }
 `;
 
-exports[`It fail if the body of the request is not a number 1`] = `[Error: Invalid body, a number was expected]`;
+exports[`It fail if the body of the request is not a number 1`] = `
+Object {
+  "body": "{\\"error\\":\\"Invalid body, a number was expected\\"}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "statusCode": 400,
+}
+`;

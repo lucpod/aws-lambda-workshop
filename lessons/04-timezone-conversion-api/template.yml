@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A timezone conversion API
+Resources:
+  HelloWorldApi:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./src
+      Handler: handler.handler
+      Runtime: nodejs6.10
+      # MemorySize: 128
+      # Timeout: 3
+      Events:
+        Endpoint:
+          Type: Api
+          Properties:
+            Path: /convert/{timestamp}/{sourceTimezone}/{targetTimezone}
+            Method: get

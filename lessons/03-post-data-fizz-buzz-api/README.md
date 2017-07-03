@@ -72,4 +72,4 @@ Be sure to replace the value of `BUCKET` with your own unique bucket name
 
 | << Prev | Next >> |
 | :---         |          ---: |
-| [02 - Advanced Hello World API](../02-advanced-hello-world-api)   | [04 - Timezone Conversion API](../03-timezone-conversion-api) |
+| [02 - Advanced Hello World API](../02-advanced-hello-world-api)   | [04 - Timezone Conversion API](../04-timezone-conversion-api) |

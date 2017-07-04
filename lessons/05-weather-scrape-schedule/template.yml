@@ -1,13 +1,23 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A Weather forecast scraper job
+
+Parameters:
+  ApiKey:
+    Description: The API KEY of the service
+    Type: String
+  Location:
+    Default: "Roma,IT"
+    Type: String
+
 Resources:
-  
+
   WeatherScraperSchedule:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src
+      CodeUri: ./src.zip
       Handler: handler.handler
+      Policies: AmazonDynamoDBFullAccess
       Runtime: nodejs6.10
       MemorySize: 256
       Timeout: 10
@@ -18,13 +28,9 @@ Resources:
             Schedule: rate(2 hours)
       Environment:
         Variables:
-          API_KEY: "XXX"
-          LOCATION: "Roma,IT"
+          API_KEY: !Ref ApiKey
+          LOCATION: !Ref Location
           TABLE_NAME: !Ref Table
 
   Table:
     Type: AWS::Serverless::SimpleTable
-    TableName: weather_forecast
-    PrimaryKey:
-      Name: Date
-      Type: String

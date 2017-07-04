@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "aws-sdk": "^2.80.0",
+    "dynamise": "^0.6.0",
     "request": "^2.81.0"
   }
 }

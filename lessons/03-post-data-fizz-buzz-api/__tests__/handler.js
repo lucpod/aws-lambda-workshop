@@ -1,6 +1,6 @@
 const { handler } = require('../src/handler')
 
-test('It fail if the body of the request is not a number', () => {
+test('It fails if the body of the request is not a number', () => {
   handler({
     body: 'aaa'
   }, {}, (err, response) => {

@@ -25,6 +25,16 @@ The API response is a JSON object containing the converted timestamp. E.g.:
 The goal of this exercise is to learn how to use external libraries like [moment-timezone](https://www.npmjs.com/package/moment-timezone) and path parameters in your Lamnda Functions.
 
 
+## Install dependencies
+
+Before being able to run this example locally or to deploy it you need to download
+the necessary dependencies in the src folder (`lessons/04-timezone-conversion-api/src`):
+
+```
+npm install
+```
+
+
 ## Test locally
 
 With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/04-timezone-conversion-api/`), run:

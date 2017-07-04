@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A Weather forecast scraper job
+Resources:
+  
+  WeatherScraperSchedule:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./src
+      Handler: handler.handler
+      Runtime: nodejs6.10
+      MemorySize: 256
+      Timeout: 10
+      Events:
+        Timer:
+          Type: Schedule
+          Properties:
+            Schedule: rate(2 hours)
+      Environment:
+        Variables:
+          API_KEY: "XXX"
+          LOCATION: "Roma,IT"
+          TABLE_NAME: !Ref Table
+
+  Table:
+    Type: AWS::Serverless::SimpleTable
+    TableName: weather_forecast
+    PrimaryKey:
+      Name: Date
+      Type: String

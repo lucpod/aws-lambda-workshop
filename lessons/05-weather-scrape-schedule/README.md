@@ -44,7 +44,7 @@ You can deploy on your AWS account with the following commands using [AWS cli](h
 ```
 export BUCKET=your-unique-bucket-name
 export API_KEY=XXXX
-export STACK_NAME=timezone-conversion-api
+export STACK_NAME=weather-scrape-schedule
 
 
 rm -f src.zip && cd src && zip -r ../src.zip . && cd ..

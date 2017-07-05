@@ -2,9 +2,7 @@ const request = require('request')
 const db = require('dynamise')
 
 exports.handler = (event, context, callback) => {
-  const API_KEY = process.env.API_KEY
-  const LOCATION = process.env.LOCATION
-  const TABLE_NAME = process.env.TABLE_NAME
+  const { API_KEY, LOCATION, TABLE_NAME } = process.env
 
   const url = `http://api.openweathermap.org/data/2.5/forecast`
   const qs = { q: LOCATION, appid: API_KEY }

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "async": "^2.5.0",
+    "aws-sdk": "^2.80.0",
+    "azure-storage": "^2.2.1"
+  }
+}

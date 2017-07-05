@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: A Weather forecast scraper job
+Description: A lambda to backup s3 files into Azure storage service
 
 Parameters:
   ApiKey:

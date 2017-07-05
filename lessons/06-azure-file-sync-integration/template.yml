@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A Weather forecast scraper job
+
+Parameters:
+  AzureAccountName:
+    Description: The Azure Account Name
+    Type: String
+  AzureAccountKey:
+    Description: The Azure Account Key
+    Type: String
+  AzureShareName:
+    Description: The name of the Share folder in Azure Storage
+    Default: "s3backup"
+    Type: String
+
+Resources:
+
+  AzureFileSyncIntegration:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./src.zip
+      Handler: handler.handler
+      Policies: AmazonS3ReadOnlyAccess
+      Runtime: nodejs6.10
+      MemorySize: 512
+      Timeout: 300
+      Events:
+        FileUpload:
+          Type: S3
+          Properties:
+            Bucket: !Ref Bucket
+            Events: s3:ObjectCreated:*
+
+      Environment:
+        Variables:
+          AZURE_ACCOUNT_NAME: !Ref AzureAccountName
+          AZURE_ACCOUNT_KEY: !Ref AzureAccountKey
+          AZURE_SHARE_NAME: !Ref AzureShareName
+
+  Bucket:
+    Type: AWS::S3::Bucket

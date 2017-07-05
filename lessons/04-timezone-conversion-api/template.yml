@@ -5,7 +5,7 @@ Resources:
   HelloWorldApi:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src
+      CodeUri: ./src.zip
       Handler: handler.handler
       Runtime: nodejs6.10
       # MemorySize: 128

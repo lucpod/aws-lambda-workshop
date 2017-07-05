@@ -24,7 +24,7 @@ npm install
 
 ## Azure Account details
 
-This example requires an Azure account and needs to be configured with proper `AZURE_ACCOUNT_NAME` and `AZURE_ACCOUNT_KEY` parametes.
+This example requires an Azure account and needs to be configured with proper `AZURE_ACCOUNT_NAME` and `AZURE_ACCOUNT_KEY` parameters.
 
 You can get these values from your Azure dashboard as per the following screenshot:
 
@@ -36,8 +36,12 @@ You can get these values from your Azure dashboard as per the following screensh
 With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/06-azure-file-sync-integrations/`), run:
 
 ```bash
+export AZURE_ACCOUNT_NAME=XXXX
+export AZURE_ACCOUNT_KEY=YYYY
 lambda-local -l src/handler.js -h handler -e sample-event.json
 ```
+
+Of course, replace `XXXX` and `YYYY` with your own Azure account details.
 
 
 ## Deploy on AWS

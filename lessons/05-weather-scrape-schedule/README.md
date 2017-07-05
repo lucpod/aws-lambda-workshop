@@ -1,7 +1,6 @@
 # Example 05 - Weather Scrape Schedule
 
-This example implements a scheduled lambda that runs every two hours, invokes an
-weather API and save some weather forecast data in a DynamoDB table.
+This example implements a scheduled lambda that runs every two hours, invokes a weather API and save some weather forecast data in a DynamoDB table.
 
 
 ## Goal
@@ -33,8 +32,11 @@ required in this exercise (1 every 2 hours).
 With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/05-weather-scrape-schedule/`), run:
 
 ```bash
+export API_KEY=XXXX
 lambda-local -l src/handler.js -h handler -e sample-event.json
 ```
+
+Of course, replace `XXXX` with your own Open Weather Map API Key.
 
 
 ## Deploy on AWS

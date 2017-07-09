@@ -42,7 +42,7 @@ Object {
 
 exports[`It fails if the body of the request is not a number 1`] = `
 Object {
-  "body": "{\\"error\\":\\"Invalid body, a number was expected\\"}",
+  "body": "{\\"error\\":\\"Invalid body, a positive integer was expected\\"}",
   "headers": Object {
     "Content-Type": "application/json",
   },

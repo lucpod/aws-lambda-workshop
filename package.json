@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Some examples for AWS lambda workshops",
   "scripts": {
-    "test:lint": "eslint lessons/**/*.js",
+    "test:lint": "eslint lessons/**/*.js --ignore-pattern node_modules",
     "test:unit": "jest lessons/**/__tests__/*.js --verbose --coverage",
     "test": "npm run test:lint && npm run test:unit"
   },
@@ -34,6 +34,8 @@
     "jest": "^20.0.4"
   },
   "dependencies": {
-    "moment-timezone": "^0.5.13"
+    "dynamise": "^0.6.0",
+    "moment-timezone": "^0.5.13",
+    "request": "^2.81.0"
   }
 }

@@ -1,8 +1,8 @@
 exports.handler = (event, context, callback) => {
   const number = parseInt(event.body)
 
-  if (Number.isNaN(number)) {
-    const error = 'Invalid body, a number was expected'
+  if (Number.isNaN(number) || !Number.isInteger(number) || number <= 0) {
+    const error = 'Invalid body, a positive integer was expected'
     return callback(null, {
       statusCode: 400,
       headers: {

@@ -1,8 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A little Fizz Buzz web server
+
 Resources:
-  HelloWorldApi:
+  FizzBuzzApi:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./src
@@ -16,3 +17,8 @@ Resources:
           Properties:
             Path: /fizzbuzz
             Method: post
+
+Outputs:
+  endpoint:
+    Description: The API Gateway endpoint for invoking the API
+    Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]

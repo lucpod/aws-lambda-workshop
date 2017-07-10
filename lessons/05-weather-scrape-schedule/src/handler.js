@@ -20,9 +20,9 @@ exports.handler = (event, context, callback) => {
       Temp_min: rawRecord.main.temp_min,
       Temp_max: rawRecord.main.temp_max,
       Humidity: rawRecord.main.humidity,
-      Wheater: rawRecord.weather[0].main,
-      Wheater_description: rawRecord.weather[0].description,
-      Wheater_icon: rawRecord.weather[0].icon,
+      Weather: rawRecord.weather[0].main,
+      Weather_description: rawRecord.weather[0].description,
+      Weather_icon: rawRecord.weather[0].icon,
       Wind_speed: rawRecord.wind.speed,
       Wind_deg: rawRecord.wind.deg
     }))

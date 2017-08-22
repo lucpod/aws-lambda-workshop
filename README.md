@@ -24,8 +24,6 @@ Every example comes with its own documentation about how to run and deploy the c
 
 [**➡️  Start with LESSON 01**](lessons/01-simple-hello-world-api)
 
-**Some examples are still WORK IN PROGRESS**
-
 
 ## Running tests
 

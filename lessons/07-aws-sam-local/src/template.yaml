@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Simple Hello world type example
+Resources:
+    hello:
+        Type: AWS::Serverless::Function
+        Properties:
+            Handler: hello.handler
+            Runtime: nodejs6.10
+            Events:
+                Api:
+                    Type: Api
+                    Properties:
+                        Path: /hello
+                        Method: get

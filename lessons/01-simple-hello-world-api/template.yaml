@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A simple hello world REST API
-
 Resources:
   HelloWorldApi:
     Type: AWS::Serverless::Function
@@ -18,7 +17,7 @@ Resources:
             Path: /helloworld
             Method: get
 
-Outputs:
-  endpoint:
-    Description: The API Gateway endpoint for invoking the API
-    Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]
+# Outputs:
+#   endpoint:
+#     Description: The API Gateway endpoint for invoking the API
+#     Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]

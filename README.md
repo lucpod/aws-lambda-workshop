@@ -13,7 +13,8 @@ In order to use the examples in this repository you will need to have:
   1. An AWS account
   2. the AWS [CLI tool](https://aws.amazon.com/cli/) installed and configured to use your AWS account
   3. Node.js (version >= 6.10) and NPM installed in your machine
-  4. [Lambda-local package](https://www.npmjs.com/package/lambda-local) installed globally in your machine
+  4. Docker, SAM Local will use the DOCKER_HOST environment variable to contact the docker daemon.
+  5. [aws-sam-local](https://www.npmjs.com/package/aws-sam-local) installed globally in your machine
 
 
 ## Usage

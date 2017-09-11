@@ -21,10 +21,10 @@ The goal of this exercise is to learn how to use query string parameters in API 
 
 ## Test locally
 
-With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/02-advanced-hello-world-api/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) installed and your shell in this project folder (`lessons/02-advanced-hello-world-api/`), run:
 
 ```bash
-lambda-local -l src/handler.js -h handler -e sample-event.json
+sam local invoke HelloWorldApiAdvanced -e sample-event.json
 ```
 
 ## Deploy on AWS
@@ -35,9 +35,9 @@ You can deploy on your AWS account with the following commands using [AWS cli](h
 export BUCKET=your-unique-bucket-name
 export STACK_NAME=advanced-hello-world
 
-aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
+sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packaged-template.yaml
 
-aws cloudformation deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
+sam deploy --template-file packaged-template.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
 ```
 
 Be sure to replace the value of `BUCKET` with your own unique bucket name

@@ -17,7 +17,7 @@ Resources:
             Path: /helloworld
             Method: get
 
-# Outputs:
-#   endpoint:
-#     Description: The API Gateway endpoint for invoking the API
-#     Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]
+Outputs:
+  endpoint:
+    Description: The API Gateway endpoint for invoking the API
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com' 

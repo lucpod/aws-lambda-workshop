@@ -13,7 +13,7 @@ The API will respond to GET requests always returning:
 The goal of this exercise is to learn how to write a very simple Lambda, test it locally and deploy it on AWS.
 
 ## Validate yaml file
-With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) you can test if your template.yaml fileis valid vy
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) you can test if your template.yaml file is valid vy
 
 ```bash
 sam validate

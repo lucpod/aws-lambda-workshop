@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "dynamise": "^0.6.0",
+    "lambda-local": "^1.4.2",
     "moment-timezone": "^0.5.13",
     "request": "^2.81.0"
   }

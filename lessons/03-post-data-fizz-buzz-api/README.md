@@ -42,10 +42,10 @@ The goal of this exercise is to learn how to read from the body in API Lambdas a
 
 ## Test locally
 
-With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/03-post-data-fizz-buzz-api/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall)  installed and your shell in this project folder (`lessons/03-post-data-fizz-buzz-api/`), run:
 
 ```bash
-lambda-local -l src/handler.js -h handler -e sample-event-fizz.json
+sam local invoke FizzBuzzApi -e sample-event-fizz.json
 ```
 
 You can also use the event files `sample-event-buzz.json`, `sample-event-fizz-buzz.json`, `sample-event-n.json` and `sample-event-error.json` to test all the other cases supported by this API.
@@ -59,9 +59,9 @@ You can deploy on your AWS account with the following commands using [AWS cli](h
 export BUCKET=your-unique-bucket-name
 export STACK_NAME=post-data-fizz-buzz-api
 
-aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
+sam package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yaml
 
-aws cloudformation deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
+sam deploy --template-file packaged-template.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
 ```
 
 Be sure to replace the value of `BUCKET` with your own unique bucket name

@@ -37,10 +37,10 @@ npm install
 
 ## Test locally
 
-With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/04-timezone-conversion-api/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) installed and your shell in this project folder (`lessons/04-timezone-conversion-api/`), run:
 
 ```bash
-lambda-local -l src/handler.js -h handler -e sample-event.json
+sam local invoke TimezoneConversionApi -e sample-event.json
 ```
 
 
@@ -54,9 +54,9 @@ export STACK_NAME=timezone-conversion-api
 
 rm -f src.zip && cd src && zip -r ../src.zip . && cd ..
 
-aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
+sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file packaged-template.yaml
 
-aws cloudformation deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
+sam deploy --template-file packaged-template.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM
 ```
 
 Be sure to replace the value of `BUCKET` with your own unique bucket name

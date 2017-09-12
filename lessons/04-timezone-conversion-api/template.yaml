@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: A little Fizz Buzz web server
+Description: A timezone conversion API
 
 Resources:
-  FizzBuzzApi:
+  TimezoneConversionApi:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./src
@@ -15,10 +15,10 @@ Resources:
         Endpoint:
           Type: Api
           Properties:
-            Path: /fizzbuzz
-            Method: post
+            Path: /convert/{timestamp}/{sourceTimezone}/{targetTimezone}
+            Method: get
 
 Outputs:
   endpoint:
     Description: The API Gateway endpoint for invoking the API
-    Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com' 

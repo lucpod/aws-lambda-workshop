@@ -29,11 +29,11 @@ required in this exercise (1 every 2 hours).
 
 ## Test locally
 
-With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/05-weather-scrape-schedule/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) installed and your shell in this project folder (`lessons/05-weather-scrape-schedule/`), run:
 
 ```bash
 export API_KEY=XXXX
-lambda-local -l src/handler.js -h handler -e sample-event.json
+sam local invoke WeatherScraperSchedule -e sample-event.json
 ```
 
 Of course, replace `XXXX` with your own Open Weather Map API Key.
@@ -51,9 +51,9 @@ export STACK_NAME=weather-scrape-schedule
 
 rm -f src.zip && cd src && zip -r ../src.zip . && cd ..
 
-aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
+sam package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yaml
 
-aws cloudformation deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM --parameter-overrides ApiKey=$API_KEY
+sam deploy --template-file packaged-template.yaml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM --parameter-overrides ApiKey=$API_KEY
 ```
 
 Be sure to replace the value of `BUCKET` with your own unique bucket name and to

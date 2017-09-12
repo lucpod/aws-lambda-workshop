@@ -33,12 +33,14 @@ You can get these values from your Azure dashboard as per the following screensh
 
 ## Test locally
 
-With [lambda-local](https://www.npmjs.com/package/lambda-local) installed and your shell in this project folder (`lessons/06-azure-file-sync-integrations/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) installed and your shell in this project folder (`lessons/06-azure-file-sync-integrations/`), run:
 
 ```bash
 export AZURE_ACCOUNT_NAME=XXXX
 export AZURE_ACCOUNT_KEY=YYYY
-lambda-local -l src/handler.js -h handler -e sample-event.json
+
+sam local invoke AzureFileSyncIntegration -e sample-event.json
+
 ```
 
 Of course, replace `XXXX` and `YYYY` with your own Azure account details.
@@ -56,9 +58,9 @@ export STACK_NAME=azure-file-sync-integration
 
 rm -f src.zip && cd src && zip -r ../src.zip . && cd ..
 
-aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
+sam package --template-file template.yml --s3-bucket $BUCKET --output-template-file packaged-template.yml
 
-aws cloudformation deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM --parameter-overrides AzureAccountName=$AZURE_ACCOUNT_NAME AzureAccountKey=$AZURE_ACCOUNT_KEY
+sam deploy --template-file packaged-template.yml --stack-name $STACK_NAME --capabilities CAPABILITY_IAM --parameter-overrides AzureAccountName=$AZURE_ACCOUNT_NAME AzureAccountKey=$AZURE_ACCOUNT_KEY
 ```
 
 Be sure to replace the value of `BUCKET` with your own unique bucket name and to

@@ -15,7 +15,7 @@ Resources:
   WeatherScraperSchedule:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src.zip
+      CodeUri: ./src
       Handler: handler.handler
       Policies: AmazonDynamoDBFullAccess
       Runtime: nodejs6.10

@@ -1,12 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: A timezone conversion API
-
+Description: A simple hello world REST API
 Resources:
-  TimezoneConversionApi:
+  HelloWorldApi:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src.zip
+      CodeUri: ./src
       Handler: handler.handler
       Runtime: nodejs6.10
       # MemorySize: 128
@@ -15,10 +14,10 @@ Resources:
         Endpoint:
           Type: Api
           Properties:
-            Path: /convert/{timestamp}/{sourceTimezone}/{targetTimezone}
+            Path: /helloworld
             Method: get
 
 Outputs:
   endpoint:
     Description: The API Gateway endpoint for invoking the API
-    Value: !Join [ '', [ 'https://', {Ref: ServerlessRestApi}, '.execute-api.', {Ref: 'AWS::Region'}, '.amazonaws.com' ] ]
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com' 

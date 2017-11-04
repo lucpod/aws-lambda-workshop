@@ -3,7 +3,7 @@
 Some examples for AWS lambda workshops
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![CircleCI](https://circleci.com/gh/lmammino/aws-lambda-workshop.svg?style=shield)](https://circleci.com/gh/lmammino/aws-lambda-workshop)
+[![CircleCI](https://circleci.com/gh/lucpod/aws-lambda-workshop.svg?style=shield)](https://circleci.com/gh/lucpod/aws-lambda-workshop)
 
 
 ## Requirements

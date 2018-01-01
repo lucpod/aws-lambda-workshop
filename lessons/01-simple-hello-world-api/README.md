@@ -21,7 +21,7 @@ sam validate
 
 ## Test locally
 
-With [aws-sam-local](https://github.com/awslabs/aws-sam-locall) installed and your shell in this project folder (`lessons/01-simple-hello-world-api/`), run:
+With [aws-sam-local](https://github.com/awslabs/aws-sam-local) installed and your shell in this project folder (`lessons/01-simple-hello-world-api/`), run:
 
 ```bash
 sam local invoke HelloWorldApi -e sample-event.json
